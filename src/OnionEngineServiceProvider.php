@@ -3,7 +3,7 @@
 namespace kweber\OnionEngine;
 
 use Illuminate\Support\ServiceProvider;
-// use App\Console\Commands\Installer\Installer;
+use kweber\OnionEngine\App\Console\Commands\Installer\Installer;
 
 class OnionEngineServiceProvider extends ServiceProvider
 {
@@ -24,7 +24,7 @@ class OnionEngineServiceProvider extends ServiceProvider
 
         if ($this->app->runningInConsole()) {
             $this->commands([
-                \kweber\OnionEngine\App\Console\Commands\Installer\Installer::class,
+                Installer::class,
             ]);
         }
     }
