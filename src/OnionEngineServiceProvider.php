@@ -8,7 +8,7 @@ use kweber\OnionEngine\App\Console\Commands\Installer\Installer;
 class OnionEngineServiceProvider extends ServiceProvider
 {
     /**
-    * Publishes configuration file.
+    * Booting up package
     *
     * @return  void
     */
@@ -18,15 +18,8 @@ class OnionEngineServiceProvider extends ServiceProvider
         // $this->loadMigrationsFrom(__DIR__.'/path/to/migrations');
         // $this->loadTranslationsFrom(__DIR__.'/path/to/translations', 'courier');
         // $this->loadViewsFrom(__DIR__.'/path/to/views', 'courier');
-        // $this->publishes([
-        //     __DIR__ . '/../config/onion_engine.php' => config_path('onion_engine.php'),
-        // ], 'onion-engine-config');
-
-        if ($this->app->runningInConsole()) {
-            $this->commands([
-                Installer::class,
-            ]);
-        }
+        $this->publishConfig();
+        $this->registerCommands();
     }
 
     /**
@@ -42,7 +35,29 @@ class OnionEngineServiceProvider extends ServiceProvider
         );
     }
 
-    $this->app->bind('App\User', function(){
-        return $this->app->make('kweber\OnionEngine\App\User');
-    });
+    /**
+    * Publishes configuration files.
+    *
+    * @return  void
+    */
+    private function publishConfig()
+    {
+        $this->publishes([
+            __DIR__ . '/../config/onion_engine.php' => config_path('onion_engine.php'),
+        ], 'onion-engine-config');
+    }
+
+    /**
+    * Create Artisan commands.
+    *
+    * @return  void
+    */
+    private function registerCommands()
+    {
+      if ($this->app->runningInConsole()) {
+          $this->commands([
+              Installer::class,
+          ]);
+      }
+    }
 }
