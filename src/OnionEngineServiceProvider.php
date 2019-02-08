@@ -14,10 +14,10 @@ class OnionEngineServiceProvider extends ServiceProvider
     */
     public function boot()
     {
-        // $this->loadRoutesFrom(__DIR__.'/routes.php');
         // $this->loadMigrationsFrom(__DIR__.'/path/to/migrations');
         // $this->loadTranslationsFrom(__DIR__.'/path/to/translations', 'courier');
-        // $this->loadViewsFrom(__DIR__.'/path/to/views', 'courier');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views/admin/', 'OnionEngineAdmin');
+        $this->loadRoutes();
         $this->publishConfig();
         $this->registerCommands();
     }
@@ -48,7 +48,7 @@ class OnionEngineServiceProvider extends ServiceProvider
     }
 
     /**
-    * Create Artisan commands.
+    * Register Artisan commands.
     *
     * @return  void
     */
@@ -59,5 +59,15 @@ class OnionEngineServiceProvider extends ServiceProvider
               Installer::class,
           ]);
       }
+    }
+
+    /**
+    * Load routes.
+    *
+    * @return  void
+    */
+    private function loadRoutes()
+    {
+      $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
     }
 }
