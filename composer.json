@@ -1,0 +1,30 @@
+{
+  "name": "kweber/onionengine",
+  "description": "A small CMS for fast creating simple Laravel websites",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+      {
+          "name": "Kamil Weber",
+          "email": "kamilweber24@gmail.com"
+      }
+  ],
+  "minimum-stability": "dev",
+  "prefer-sable": true,
+  "require": {
+    "php": "^7.1.3"
+  },
+  "require-dev": {},
+  "autoload": {
+    "psr-4": {
+      "kweber\\OnionEngine\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "kweber\\OnionEngine\\OnionEngineServiceProvider"
+      ]
+    }
+  }
+}
