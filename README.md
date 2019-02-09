@@ -14,30 +14,30 @@ Installer will copy all configuration and assets files to its destination direct
 
 ```javascript
 'providers' => [
-    kweber\OnionEngine\OnionEngineServiceProvider::class
+    Kweber\OnionEngine\OnionEngineServiceProvider::class
 ],
 
 'aliases' => [
-    'OnionEngine' => kweber\OnionEngine\App\Facades\OnionEngine::class
+    'OnionEngine' => Kweber\OnionEngine\App\Facades\OnionEngine::class
 ],
 ```
 
 ### Add trait to user model
 
 ```php
-use OnionEngineUserTrait;
+use OnionEngineUser;
 ```
 
 ## Dev
 
 ### Add to composer.json
 
+Add local repository
 ```javascript
-"autoload": {
-    "psr-4": {
-        "App\\": "app/",
-        "kweber\\OnionEngine\\": "packages/kweber/onionengine/src"
+"repositories": [
+    {
+        "type": "path",
+        "url": "packages/kweber/onionengine"
     }
-},
-
+]
 ```
