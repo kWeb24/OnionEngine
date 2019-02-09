@@ -8,7 +8,7 @@ use kweber\OnionEngine\App\Console\Commands\Installer\Installer;
 class OnionEngineServiceProvider extends ServiceProvider
 {
     /**
-    * Booting up package
+    * Perform post-registration booting of services.
     *
     * @return  void
     */
@@ -20,6 +20,7 @@ class OnionEngineServiceProvider extends ServiceProvider
         $this->loadRoutes();
         $this->publishConfig();
         $this->registerCommands();
+        $this->publishAdminAssets();
     }
 
     /**
@@ -44,7 +45,19 @@ class OnionEngineServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__ . '/../config/onion_engine.php' => config_path('onion_engine.php'),
-        ], 'onion-engine-config');
+        ], 'oe-config');
+    }
+
+    /**
+    * Publishes admin assets.
+    *
+    * @return  void
+    */
+    private function publishAdminAssets()
+    {
+        $this->publishes([
+            __DIR__ . '/../resources/adminator/src/src/assets/' => public_path('vendor/adminator'),
+        ], 'oe-admin-assets');
     }
 
     /**

@@ -4,6 +4,8 @@
 
 ## Installation
 
+Installer will copy all configuration and assets files to its destination directory.
+
 `php artisan onionengine:install`
 
 ### Add to config/app.php
