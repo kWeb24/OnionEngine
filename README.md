@@ -20,6 +20,14 @@ Installer will copy all configuration and assets files to its destination direct
 ],
 ```
 
+### Add trait to user model
+
+```php
+use OnionEngineUserTrait;
+```
+
+## Dev
+
 ### Add to composer.json
 
 ```javascript
@@ -30,10 +38,4 @@ Installer will copy all configuration and assets files to its destination direct
     }
 },
 
-```
-
-### Add trait to user model
-
-```php
-use OnionEngineUserTrait;
 ```
