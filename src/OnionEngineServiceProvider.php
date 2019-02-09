@@ -1,6 +1,6 @@
 <?php
 
-namespace kweber\OnionEngine;
+namespace Kweber\OnionEngine;
 
 use Illuminate\Support\ServiceProvider;
 use kweber\OnionEngine\App\Console\Commands\Installer\Installer;

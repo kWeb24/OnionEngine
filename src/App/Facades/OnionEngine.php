@@ -1,6 +1,6 @@
 <?php
 
-namespace kweber\OnionEngine\App\Facades;
+namespace Kweber\OnionEngine\App\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
@@ -12,10 +12,10 @@ class OnionEngine extends Facade
      * MAJOR version when you make incompatible API changes,
      * MINOR version when you add functionality in a backwards-compatible manner
      * PATCH version when you make backwards-compatible bug fixes.
-     * Labels for relase-candidate etc
+     * Labels: -dev -patch (-p) -alpha (-a) -beta (-b)
      * https://semver.org/
      */
-    public static $version = '0.1.0-alpha';
+    public static $version = '0.1.0-dev';
 
     /**
      * Current version stability

@@ -1,6 +1,6 @@
 <?php
 
-namespace kweber\OnionEngine\App\Http\Controllers;
+namespace Kweber\OnionEngine\App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;

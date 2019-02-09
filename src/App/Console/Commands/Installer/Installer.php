@@ -1,5 +1,5 @@
 <?php
-namespace kweber\OnionEngine\App\Console\Commands\Installer;
+namespace Kweber\OnionEngine\App\Console\Commands\Installer;
 
 use Illuminate\Console\Command;
 
