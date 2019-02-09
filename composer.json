@@ -12,7 +12,10 @@
   "minimum-stability": "dev",
   "prefer-sable": true,
   "require": {
-    "php": "^7.1.3"
+    "php": "^7.1.3",
+    "laravolt/avatar": "^2.0",
+    "owen-it/laravel-auditing": "^8.0",
+    "spatie/laravel-permission": "^2.12"
   },
   "require-dev": {},
   "autoload": {
