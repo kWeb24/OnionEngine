@@ -26,16 +26,16 @@
   "require-dev": {},
   "autoload": {
     "psr-4": {
-      "Kweber\\OnionEngine\\": "src/"
+      "Kweber\\OnionEngine\\": "src"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "Kweber\\OnionEngine\\OnionEngineServiceProvider::class"
+        "Kweber\\OnionEngine\\OnionEngineServiceProvider"
       ],
       "aliases": {
-        "OnionEngine": "Kweber\\OnionEngine\\App\\Facades\\OnionEngine::class"
+        "OnionEngine": "Kweber\\OnionEngine\\App\\Facades\\OnionEngine"
       }
     }
   }
