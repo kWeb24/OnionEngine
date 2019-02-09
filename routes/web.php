@@ -14,7 +14,7 @@
 // Route::get('/home', 'HomeController@index')->name('home');
 
 // Route::group(['middleware' => 'auth'], function() {
-  Route::get('/test', 'kweber\OnionEngine\App\Http\Controllers\AdminController@index')->name('test');
+  Route::get('/admin', 'kweber\OnionEngine\App\Http\Controllers\AdminController@index')->name('admin');
 // });
 
 // Route::group(['middleware' => ['role:super-admin']], function() {
