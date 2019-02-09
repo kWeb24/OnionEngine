@@ -4,6 +4,13 @@
 
 ## Installation
 
+### Laravel setup
+* Install fresh copy of Laravel
+* Make auth with: `php artisan make:auth`
+* Execute migrations with: `php artisan migrate`
+
+### Run OnionEngine installer
+
 Installer will copy all configuration and assets files to its destination directory.
 
 `php artisan onionengine:install`
