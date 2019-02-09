@@ -15,12 +15,12 @@ class OnionEngine extends Facade
      * Labels: -dev -patch (-p) -alpha (-a) -beta (-b)
      * https://semver.org/
      */
-    public static $version = '0.1.0-dev';
+    public static $version = '0.1.1-dev';
 
     /**
      * Current version stability
      */
-    public static $stability = 'dev-develop';
+    public static $stability = 'dev';
 
     /**
      * Get the registered name of the component.
