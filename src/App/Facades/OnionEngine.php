@@ -48,4 +48,13 @@ class OnionEngine extends Facade
     public static function stability() {
         return OnionEngine::$stability;
     }
+
+    /**
+     * Get package stability
+     *
+     * @return string
+     */
+    public static function authRoutes() {
+        require __DIR__ . '/../../../routes/auth.php';
+    }
 }

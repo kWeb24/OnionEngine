@@ -29,14 +29,30 @@ Installer will copy all configuration and assets files to its destination direct
 ],
 ```
 
+### Auth routes
+Add just after your `Auth::routes()` in `routes/web.php`
+
+```javascript
+OnionEngine::authRoutes();
+```
+
 ### Traits
 
-User Trait:
+User.php:
 
 ```php
 use Kweber\OnionEngine\App\Traits\OnionEngineUser;
 ...
 use OnionEngineUser;
+```
+
+Auth/LoginController.php:
+
+```php
+use Kweber\OnionEngine\App\Traits\Auth\OnionEngineLogin;
+...
+use AuthenticatesUsers; //after this line
+use OnionEngineLogin;
 ```
 
 ## Dev
