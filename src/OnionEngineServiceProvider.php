@@ -3,7 +3,7 @@
 namespace Kweber\OnionEngine;
 
 use Illuminate\Support\ServiceProvider;
-use kweber\OnionEngine\App\Console\Commands\Installer\Installer;
+use Kweber\OnionEngine\App\Console\Commands\Installer\Installer;
 
 class OnionEngineServiceProvider extends ServiceProvider
 {
