@@ -32,6 +32,8 @@ Installer will copy all configuration and assets files to its destination direct
 ### Add trait to user model
 
 ```php
+use Kweber\OnionEngine\App\Traits\OnionEngineUser;
+...
 use OnionEngineUser;
 ```
 
