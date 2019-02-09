@@ -10,6 +10,8 @@ Installer will copy all configuration and assets files to its destination direct
 
 ### Add to config/app.php
 
+**Note: only for Laravel 5.4 and below, because since Laravel 5.5 we use package auto-discovery.**
+
 ```javascript
 'providers' => [
     kweber\OnionEngine\OnionEngineServiceProvider::class

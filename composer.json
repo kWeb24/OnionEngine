@@ -1,6 +1,12 @@
 {
-  "name": "kweber/onionengine",
+  "name": "kweber/onion-engine",
   "description": "A small CMS for fast creating simple Laravel websites",
+  "keywords": [
+      "laravel",
+      "cms",
+      "onionengine",
+      "kweber"
+  ],
   "type": "library",
   "license": "MIT",
   "authors": [
@@ -10,7 +16,7 @@
       }
   ],
   "minimum-stability": "dev",
-  "prefer-sable": true,
+  "prefer-stable": true,
   "require": {
     "php": "^7.1.3",
     "laravolt/avatar": "^2.0",
@@ -20,14 +26,23 @@
   "require-dev": {},
   "autoload": {
     "psr-4": {
-      "kweber\\OnionEngine\\": "src/"
+      "Kweber\\OnionEngine\\": "src/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "kweber\\OnionEngine\\OnionEngineServiceProvider"
-      ]
+        "Kweber\\OnionEngine\\OnionEngineServiceProvider::class"
+      ],
+      "aliases": {
+        "OnionEngine": "Kweber\\OnionEngine\\App\\Facades\\OnionEngine::class"
+      }
     }
+  },
+  "scripts": {
+    "post-autoload-dump": [
+      "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+      "@php artisan package:discover"
+    ]
   }
 }
