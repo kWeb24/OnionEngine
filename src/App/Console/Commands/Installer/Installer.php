@@ -1,5 +1,5 @@
 <?php
-namespace kweber\OnionEngine\App\Console\Commands\Installer;
+namespace Kweber\OnionEngine\App\Console\Commands\Installer;
 
 use Illuminate\Console\Command;
 
@@ -34,5 +34,15 @@ class Installer extends Command
     public function handle()
     {
         $this->info("OnionEngine Installer");
+
+        $this->info('Publishing configs');
+        $this->call('vendor:publish', [
+            '--tag' => 'oe-config'
+        ]);
+
+        $this->info('Publishing adminator assets');
+        $this->call('vendor:publish', [
+            '--tag' => 'oe-admin-assets', '--force' => true,
+        ]);
     }
 }

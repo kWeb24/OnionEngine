@@ -1,25 +1,29 @@
 <?php
 
-namespace kweber\OnionEngine;
+namespace Kweber\OnionEngine;
 
 use Illuminate\Support\ServiceProvider;
-use kweber\OnionEngine\App\Console\Commands\Installer\Installer;
+use Kweber\OnionEngine\App\Console\Commands\Installer\Installer;
 
 class OnionEngineServiceProvider extends ServiceProvider
 {
+
+    protected $vendorPublicPath;
     /**
-    * Booting up package
+    * Perform post-registration booting of services.
     *
     * @return  void
     */
     public function boot()
     {
-        // $this->loadRoutesFrom(__DIR__.'/routes.php');
+        $this->vendorPublicPath = config('onion_engine.options.public_assets_path');
         // $this->loadMigrationsFrom(__DIR__.'/path/to/migrations');
         // $this->loadTranslationsFrom(__DIR__.'/path/to/translations', 'courier');
-        // $this->loadViewsFrom(__DIR__.'/path/to/views', 'courier');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views/admin/', 'OnionEngineAdmin');
+        $this->loadRoutes();
         $this->publishConfig();
         $this->registerCommands();
+        $this->publishAdminAssets();
     }
 
     /**
@@ -44,11 +48,23 @@ class OnionEngineServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__ . '/../config/onion_engine.php' => config_path('onion_engine.php'),
-        ], 'onion-engine-config');
+        ], 'oe-config');
     }
 
     /**
-    * Create Artisan commands.
+    * Publishes admin assets.
+    *
+    * @return  void
+    */
+    private function publishAdminAssets()
+    {
+        $this->publishes([
+            __DIR__ . '/../resources/admin/assets/' => public_path($this->vendorPublicPath . 'admin/assets/'),
+        ], 'oe-admin-assets');
+    }
+
+    /**
+    * Register Artisan commands.
     *
     * @return  void
     */
@@ -59,5 +75,15 @@ class OnionEngineServiceProvider extends ServiceProvider
               Installer::class,
           ]);
       }
+    }
+
+    /**
+    * Load routes.
+    *
+    * @return  void
+    */
+    private function loadRoutes()
+    {
+      $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
     }
 }

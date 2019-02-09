@@ -1,8 +1,8 @@
 <?php
 
-namespace kweber\OnionEngine\App\Traits;
+namespace Kweber\OnionEngine\App\Traits;
 
-trait OnionEngineUserTrait
+trait OnionEngineUser
 {
   public function test() {
     return 'User trait test method';
