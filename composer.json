@@ -38,11 +38,5 @@
         "OnionEngine": "Kweber\\OnionEngine\\App\\Facades\\OnionEngine::class"
       }
     }
-  },
-  "scripts": {
-    "post-autoload-dump": [
-      "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-      "@php artisan package:discover"
-    ]
   }
 }
