@@ -69,7 +69,7 @@ class OnionEngine extends Facade
      */
     public static function dashboardAssetsPath()
     {
-        return asset(config('onion_engine.options.public_assets_path').'dashboard/assets/');
+        return asset(config('onion_engine.options.public_assets_path').'dashboard/assets').'/';
     }
 
     /**
@@ -79,6 +79,6 @@ class OnionEngine extends Facade
      */
     public static function assetsPath()
     {
-        return asset(config('onion_engine.options.public_assets_path'));
+        return asset(config('onion_engine.options.public_assets_path')).'/';
     }
 }

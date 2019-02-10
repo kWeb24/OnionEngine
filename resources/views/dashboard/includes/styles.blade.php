@@ -1,1 +1,1 @@
-<link href="{{ asset(config('onion_engine.options.public_assets_path') . 'dashboard/assets/css/style.css') }}" rel="stylesheet">
+<link href="{{ \OnionEngine::dashboardAssetsPath() }}css/style.css') }}" rel="stylesheet">

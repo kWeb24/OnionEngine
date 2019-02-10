@@ -5,7 +5,7 @@
         <div class="peers ai-c fxw-nw">
           <div class="peer">
             <div class="logo">
-              <img src="{{ asset(config('onion_engine.options.public_assets_path')) }}/dashboard/assets/static/images/logo.png" alt="">
+              <img src="{{ \OnionEngine::dashboardAssetsPath() }}static/images/logo.png" alt="">
             </div>
           </div>
           <div class="peer peer-greed">
