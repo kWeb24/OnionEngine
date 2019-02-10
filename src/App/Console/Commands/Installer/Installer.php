@@ -1,4 +1,5 @@
 <?php
+
 namespace Kweber\OnionEngine\App\Console\Commands\Installer;
 
 use Illuminate\Console\Command;
@@ -10,21 +11,20 @@ class Installer extends Command
      *
      * @var string
      */
-
     protected $signature = 'onionengine:install';
+
     /**
      * The console command description.
      *
      * @var string
      */
-
     protected $description = 'Publishing and installing OnionEngine';
+
     /**
      * Create a new command instance.
      *
      * @return void
      */
-
     public function __construct()
     {
         parent::__construct();

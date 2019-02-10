@@ -9,7 +9,8 @@ trait OnionEngineRegister
      *
      * @return \Illuminate\Http\Response
      */
-    public function showOnionEngineRegistrationForm() {
-      return view('OnionEngineAdmin::auth.register');
+    public function showOnionEngineRegistrationForm()
+    {
+        return view('OnionEngineAdmin::auth.register');
     }
 }

@@ -9,7 +9,8 @@ trait OnionEngineLogin
      *
      * @return \Illuminate\Http\Response
      */
-    public function showOnionEngineLoginForm() {
-      return view('OnionEngineAdmin::auth.login');
+    public function showOnionEngineLoginForm()
+    {
+        return view('OnionEngineAdmin::auth.login');
     }
 }

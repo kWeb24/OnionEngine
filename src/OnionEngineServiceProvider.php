@@ -59,7 +59,7 @@ class OnionEngineServiceProvider extends ServiceProvider
     private function publishAdminAssets()
     {
         $this->publishes([
-            __DIR__.'/../resources/admin/assets/' => public_path($this->vendorPublicPath . 'admin/assets/'),
+            __DIR__.'/../resources/admin/assets/' => public_path($this->vendorPublicPath.'admin/assets/'),
         ], 'oe-admin-assets');
     }
 

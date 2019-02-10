@@ -59,6 +59,6 @@ class OnionEngine extends Facade
      */
     public static function authRoutes()
     {
-        require __DIR__ . '/../../../routes/auth.php';
+        require __DIR__.'/../../../routes/auth.php';
     }
 }

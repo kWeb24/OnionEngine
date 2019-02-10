@@ -5,10 +5,10 @@ use Orchestra\Testbench\TestCase;
 final class OnionEngineFacadeTest extends TestCase
 {
 
-   /**
-    * Setup aliases.
-    */
-   protected function getPackageAliases($app)
+    /**
+     * Setup aliases.
+     */
+    protected function getPackageAliases($app)
     {
         return [
             'OnionEngine' => 'Kweber\\OnionEngine\\App\\Facades\\OnionEngine',
