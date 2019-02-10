@@ -61,4 +61,24 @@ class OnionEngine extends Facade
     {
         require __DIR__.'/../../../routes/auth.php';
     }
+
+    /**
+     * Get package dashboard assets path.
+     *
+     * @return string
+     */
+    public static function dashboardAssetsPath()
+    {
+        return asset(config('onion_engine.options.public_assets_path').'dashboard/assets/');
+    }
+
+    /**
+     * Get package assets path.
+     *
+     * @return string
+     */
+    public static function assetsPath()
+    {
+        return asset(config('onion_engine.options.public_assets_path'));
+    }
 }
