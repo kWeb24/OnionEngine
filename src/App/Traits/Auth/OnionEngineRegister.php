@@ -11,6 +11,6 @@ trait OnionEngineRegister
      */
     public function showOnionEngineRegistrationForm()
     {
-        return view('OnionEngineAdmin::auth.register');
+        return view('OnionEngineDashboard::auth.register');
     }
 }

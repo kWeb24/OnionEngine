@@ -7,14 +7,14 @@
 
         <title>{{ config('app.name', 'OnionEngine - Login') }} - Login</title>
 
-        @include('OnionEngineAdmin::includes.loader')
-        @include('OnionEngineAdmin::includes.fonts')
-        @include('OnionEngineAdmin::includes.styles')
+        @include('OnionEngineDashboard::includes.loader')
+        @include('OnionEngineDashboard::includes.fonts')
+        @include('OnionEngineDashboard::includes.styles')
 
     </head>
     <body class="app">
-        @include('OnionEngineAdmin::includes.spinner')
+        @include('OnionEngineDashboard::includes.spinner')
         @yield('content')
-        @include('OnionEngineAdmin::includes.scripts')
+        @include('OnionEngineDashboard::includes.scripts')
     </body>
 </html>

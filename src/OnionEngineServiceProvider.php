@@ -19,6 +19,7 @@ class OnionEngineServiceProvider extends ServiceProvider
         $this->vendorPublicPath = config('onion_engine.options.public_assets_path');
         // $this->loadMigrationsFrom(__DIR__.'/path/to/migrations');
         // $this->loadTranslationsFrom(__DIR__.'/path/to/translations', 'courier');
+        $this->loadViewsFrom(__DIR__.'/../resources/views/dashboard/', 'OnionEngineDashboard');
         $this->loadViewsFrom(__DIR__.'/../resources/views/admin/', 'OnionEngineAdmin');
         $this->loadRoutes();
         $this->publishConfig();
@@ -59,8 +60,8 @@ class OnionEngineServiceProvider extends ServiceProvider
     private function publishAdminAssets()
     {
         $this->publishes([
-            __DIR__.'/../resources/admin/assets/' => public_path($this->vendorPublicPath.'admin/assets/'),
-        ], 'oe-admin-assets');
+            __DIR__.'/../resources/dashboard/assets/' => public_path($this->vendorPublicPath.'dashboard/assets/'),
+        ], 'oe-dashboard-assets');
     }
 
     /**
