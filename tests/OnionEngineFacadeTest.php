@@ -1,19 +1,17 @@
 <?php
 
 use Orchestra\Testbench\TestCase;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithoutMiddleware;
 
 final class OnionEngineFacadeTest extends TestCase
 {
 
    /**
-    * Setup aliases
+    * Setup aliases.
     */
    protected function getPackageAliases($app)
     {
         return [
-            'OnionEngine' => 'Kweber\\OnionEngine\\App\\Facades\\OnionEngine'
+            'OnionEngine' => 'Kweber\\OnionEngine\\App\\Facades\\OnionEngine',
         ];
     }
 
@@ -28,7 +26,7 @@ final class OnionEngineFacadeTest extends TestCase
     }
 
     /**
-     * Expected format 0.0.0-{single-char-label}
+     * Expected format 0.0.0-{single-char-label}.
      */
     public function testIsReturningCorrectVersionFormat(): void
     {

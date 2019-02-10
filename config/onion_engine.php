@@ -2,6 +2,6 @@
 
 return [
     'options' => [
-      'public_assets_path' => 'vendor/kweber/onionengine/'
+      'public_assets_path' => 'vendor/kweber/onionengine/',
     ]
 ];

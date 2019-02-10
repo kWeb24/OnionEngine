@@ -10,22 +10,26 @@ class Installer extends Command
      *
      * @var string
      */
+
     protected $signature = 'onionengine:install';
     /**
      * The console command description.
      *
      * @var string
      */
+
     protected $description = 'Publishing and installing OnionEngine';
     /**
      * Create a new command instance.
      *
      * @return void
      */
+
     public function __construct()
     {
         parent::__construct();
     }
+
     /**
      * Execute the console command.
      *
@@ -33,11 +37,11 @@ class Installer extends Command
      */
     public function handle()
     {
-        $this->info("OnionEngine Installer");
+        $this->info('OnionEngine Installer');
 
         $this->info('Publishing configs');
         $this->call('vendor:publish', [
-            '--tag' => 'oe-config'
+            '--tag' => 'oe-config',
         ]);
 
         $this->info('Publishing adminator assets');
