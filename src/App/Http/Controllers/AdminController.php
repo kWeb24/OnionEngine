@@ -26,4 +26,14 @@ class AdminController extends Controller
     {
         return view('OnionEngineAdmin::index');
     }
+
+    /**
+     * Show the application settings page.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function settings()
+    {
+        return view('OnionEngineAdmin::settings.general');
+    }
 }

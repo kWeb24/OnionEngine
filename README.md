@@ -10,6 +10,7 @@
 ### Getting started
 * Install fresh copy of Laravel
 * Add OnionEngine package: `composer require kweber\onionengine`
+
 **Note: Package is not available at Packagist yet. Look at Dev section at the bottom of this Readme**
 
 ### Run OnionEngine installer
@@ -59,12 +60,12 @@ use Kweber\OnionEngine\App\Traits\Auth\OnionEngineLogin;
 use OnionEngineLogin;
 ```
 
-App/Http/Controllers/Auth/LoginController.php:
+App/Http/Controllers/Auth/RegisterController.php:
 
 ```php
-use Kweber\OnionEngine\App\Traits\Auth\OnionEngineLogin;
+use Kweber\OnionEngine\App\Traits\Auth\OnionEngineRegister;
 ...
-use OnionEngineLogin;
+use OnionEngineRegister;
 ```
 
 App/Http/Controllers/HomeController.php:
