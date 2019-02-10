@@ -1,5 +1,7 @@
 # OnionEngine
 
+[![CircleCI](https://circleci.com/gh/kWeb24/OnionEngine.svg?style=svg)](https://circleci.com/gh/kWeb24/OnionEngine)
+
 ## This is WIP Readme
 
 ## Installation
