@@ -20,8 +20,8 @@ jobs:
 
     steps:
       - checkout
-
-      - run: sudo apt update && sudo apt install zlib1g-dev libsqlite3-dev
+      # libsqlite3-dev not used now
+      - run: sudo apt update && sudo apt install zlib1g-dev
       - run: sudo docker-php-ext-install zip
 
       # Download and cache dependencies
