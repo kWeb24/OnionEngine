@@ -36,4 +36,14 @@ final class OnionEngineFacadeTest extends TestCase
     {
         $this->assertIsString(OnionEngine::stability());
     }
+
+    public function testIsReturningDashboardAssetsPathString(): void
+    {
+        $this->assertIsString(OnionEngine::dashboardAssetsPath());
+    }
+
+    public function testIsReturningAssetsPathString(): void
+    {
+        $this->assertIsString(OnionEngine::assetsPath());
+    }
 }

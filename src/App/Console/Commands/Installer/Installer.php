@@ -46,7 +46,7 @@ class Installer extends Command
 
         $this->info('Publishing adminator assets');
         $this->call('vendor:publish', [
-            '--tag' => 'oe-admin-assets', '--force' => true,
+            '--tag' => 'oe-dashboard-assets', '--force' => true,
         ]);
     }
 }
