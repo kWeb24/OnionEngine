@@ -53,13 +53,34 @@ class OnionEngine extends Facade
     }
 
     /**
-     * Get package stability.
+     * Get auth routes.
      *
      * @return string
      */
     public static function authRoutes()
     {
         require __DIR__.'/../../../routes/auth.php';
+    }
+
+    /**
+     * Get web routes.
+     *
+     * @return string
+     */
+    public static function webRoutes()
+    {
+        require __DIR__.'/../../../routes/web.php';
+    }
+
+    /**
+     * Get all routes.
+     *
+     * @return string
+     */
+    public static function routes()
+    {
+        OnionEngine::authRoutes();
+        OnionEngine::webRoutes();
     }
 
     /**
