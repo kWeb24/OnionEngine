@@ -4,6 +4,13 @@
 
 ## Installation
 
+### Laravel setup
+* Install fresh copy of Laravel
+* Make auth with: `php artisan make:auth`
+* Execute migrations with: `php artisan migrate`
+
+### Run OnionEngine installer
+
 Installer will copy all configuration and assets files to its destination directory.
 
 `php artisan onionengine:install`
@@ -22,10 +29,39 @@ Installer will copy all configuration and assets files to its destination direct
 ],
 ```
 
-### Add trait to user model
+### Auth routes
+Add just after your `Auth::routes()` in `routes/web.php`
+
+```javascript
+OnionEngine::authRoutes();
+```
+
+### Traits
+
+User.php:
 
 ```php
+use Kweber\OnionEngine\App\Traits\OnionEngineUser;
+...
 use OnionEngineUser;
+```
+
+Auth/LoginController.php:
+
+```php
+use Kweber\OnionEngine\App\Traits\Auth\OnionEngineLogin;
+...
+use AuthenticatesUsers; //after this line
+use OnionEngineLogin;
+```
+
+Auth/RegisterController.php:
+
+```php
+use Kweber\OnionEngine\App\Traits\Auth\OnionEngineRegister;
+...
+use RegistersUsers; //after this line
+use OnionEngineRegister;
 ```
 
 ## Dev
