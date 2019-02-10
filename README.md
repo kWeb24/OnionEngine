@@ -43,7 +43,7 @@ OnionEngine::webRoutes(); // Adds only web routes
 
 ### Traits
 
-User.php:
+App/User.php:
 
 ```php
 use Kweber\OnionEngine\App\Traits\OnionEngineUser;
@@ -51,7 +51,7 @@ use Kweber\OnionEngine\App\Traits\OnionEngineUser;
 use OnionEngineUser;
 ```
 
-Auth/LoginController.php:
+App/Http/Controllers/Auth/LoginController.php:
 
 ```php
 use Kweber\OnionEngine\App\Traits\Auth\OnionEngineLogin;
@@ -60,13 +60,21 @@ use AuthenticatesUsers; //after this line
 use OnionEngineLogin;
 ```
 
-Auth/RegisterController.php:
+App/Http/Controllers/Auth/LoginController.php:
 
 ```php
-use Kweber\OnionEngine\App\Traits\Auth\OnionEngineRegister;
+use Kweber\OnionEngine\App\Traits\Auth\OnionEngineLogin;
 ...
-use RegistersUsers; //after this line
-use OnionEngineRegister;
+use AuthenticatesUsers; //after this line
+use OnionEngineLogin;
+```
+
+App/Http/Controllers/HomeController.php:
+
+```php
+use Kweber\OnionEngine\App\Traits\OnionEngineDashboard;
+...
+use OnionEngineDashboard;
 ```
 
 ## Dev
