@@ -17,10 +17,9 @@ class OnionEngineServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->vendorPublicPath = config('onion_engine.options.public_assets_path');
-        // $this->loadMigrationsFrom(__DIR__.'/path/to/migrations');
-        // $this->loadTranslationsFrom(__DIR__.'/path/to/translations', 'courier');
-        $this->loadViewsFrom(__DIR__.'/../resources/views/dashboard/', 'OnionEngineDashboard');
-        $this->loadViewsFrom(__DIR__.'/../resources/views/admin/', 'OnionEngineAdmin');
+        $this->loadMigrations();
+        $this->loadTranslations();
+        $this->loadViews();
         $this->loadRoutes();
         $this->publishConfig();
         $this->registerCommands();
@@ -85,6 +84,37 @@ class OnionEngineServiceProvider extends ServiceProvider
      */
     private function loadRoutes()
     {
-        $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+        // We're loading routes through OnionEngine facade
+    }
+
+    /**
+     * Load migrations.
+     *
+     * @return  void
+     */
+    private function loadMigrations()
+    {
+        // No migrations so far
+    }
+
+    /**
+     * Load translations.
+     *
+     * @return  void
+     */
+    private function loadTranslations()
+    {
+        // No translations so far
+    }
+
+    /**
+     * Load package views.
+     *
+     * @return  void
+     */
+    private function loadViews()
+    {
+        $this->loadViewsFrom(__DIR__.'/../resources/views/dashboard/', 'OnionEngineDashboard');
+        $this->loadViewsFrom(__DIR__.'/../resources/views/admin/', 'OnionEngineAdmin');
     }
 }
