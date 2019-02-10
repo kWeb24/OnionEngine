@@ -32,11 +32,13 @@ Installer will copy all configuration and assets files to its destination direct
 ],
 ```
 
-### Auth routes
-Add just after your `Auth::routes()` in `routes/web.php`
+### Routes
+Add in `routes/web.php`
 
 ```javascript
-OnionEngine::authRoutes();
+OnionEngine::routes(); // Adds all OnionEngine routes
+OnionEngine::authRoutes(); // Adds only auth routes
+OnionEngine::webRoutes(); // Adds only web routes
 ```
 
 ### Traits
