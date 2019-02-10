@@ -7,10 +7,10 @@
 
 ## Installation
 
-### Laravel setup
+### Getting started
 * Install fresh copy of Laravel
-* Make auth with: `php artisan make:auth`
-* Execute migrations with: `php artisan migrate`
+* Add OnionEngine package: `composer require kweber\onionengine`
+**Note: Package is not available at Packagist yet. Look at Dev section at the bottom of this Readme**
 
 ### Run OnionEngine installer
 
@@ -56,7 +56,6 @@ App/Http/Controllers/Auth/LoginController.php:
 ```php
 use Kweber\OnionEngine\App\Traits\Auth\OnionEngineLogin;
 ...
-use AuthenticatesUsers; //after this line
 use OnionEngineLogin;
 ```
 
@@ -65,7 +64,6 @@ App/Http/Controllers/Auth/LoginController.php:
 ```php
 use Kweber\OnionEngine\App\Traits\Auth\OnionEngineLogin;
 ...
-use AuthenticatesUsers; //after this line
 use OnionEngineLogin;
 ```
 
@@ -76,6 +74,14 @@ use Kweber\OnionEngine\App\Traits\OnionEngineDashboard;
 ...
 use OnionEngineDashboard;
 ```
+
+### Login
+If you didn't skip database seeder in Installer you can login now at standard Laravel `/login` route
+using this credintials:
+
+`Email: admin@example.com`
+
+`Password: admin`
 
 ## Dev
 

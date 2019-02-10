@@ -24,6 +24,7 @@ class OnionEngineServiceProvider extends ServiceProvider
         $this->publishConfig();
         $this->registerCommands();
         $this->publishAdminAssets();
+        $this->registerRouterMiddlewareAliases();
     }
 
     /**
@@ -116,5 +117,17 @@ class OnionEngineServiceProvider extends ServiceProvider
     {
         $this->loadViewsFrom(__DIR__.'/../resources/views/dashboard/', 'OnionEngineDashboard');
         $this->loadViewsFrom(__DIR__.'/../resources/views/admin/', 'OnionEngineAdmin');
+    }
+
+    /**
+     * Register router middleware aliases.
+     *
+     * @return  void
+     */
+    public function registerRouterMiddlewareAliases()
+    {
+        $this->app['router']->aliasMiddleware('role', \Spatie\Permission\Middlewares\RoleMiddleware::class);
+        $this->app['router']->aliasMiddleware('permission', \Spatie\Permission\Middlewares\PermissionMiddleware::class);
+        $this->app['router']->aliasMiddleware('role_or_permission', \Spatie\Permission\Middlewares\RoleOrPermissionMiddleware::class);
     }
 }
