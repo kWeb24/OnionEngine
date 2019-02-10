@@ -55,6 +55,15 @@ use AuthenticatesUsers; //after this line
 use OnionEngineLogin;
 ```
 
+Auth/RegisterController.php:
+
+```php
+use Kweber\OnionEngine\App\Traits\Auth\OnionEngineRegister;
+...
+use RegistersUsers; //after this line
+use OnionEngineRegister;
+```
+
 ## Dev
 
 ### Add to composer.json
