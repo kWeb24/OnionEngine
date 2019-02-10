@@ -12,10 +12,10 @@ class OnionEngine extends Facade
      * MAJOR version when you make incompatible API changes,
      * MINOR version when you add functionality in a backwards-compatible manner
      * PATCH version when you make backwards-compatible bug fixes.
-     * Labels: -dev -patch (-p) -alpha (-a) -beta (-b)
+     * Labels: -dev (-d) -patch (-p) -alpha (-a) -beta (-b) -relase-candidate (-rc) -relase (-r)
      * https://semver.org/
      */
-    public static $version = '0.1.1-dev';
+    public static $version = '0.1.1-d';
 
     /**
      * Current version stability
