@@ -2,8 +2,8 @@
 
 namespace Kweber\OnionEngine\Database\Seeds;
 
-use Illuminate\Database\Seeder;
 use App\User;
+use Illuminate\Database\Seeder;
 
 class DefaultAdminSeeder extends Seeder
 {
@@ -16,8 +16,8 @@ class DefaultAdminSeeder extends Seeder
     {
         $hasDefault = User::where(['name' => 'admin'])->first();
 
-        if (!$hasDefault) {
-          $this->createAdminUser();
+        if (! $hasDefault) {
+            $this->createAdminUser();
         }
     }
 

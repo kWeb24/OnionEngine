@@ -45,7 +45,7 @@ class RolesAndPermissionsSeeder extends Seeder
         foreach ($this->roles as $name=>$role) {
             $dbRole = Role::where(['name' => $name])->first();
 
-            if (!$dbRole) {
+            if (! $dbRole) {
                 $role = Role::create(['name' => $name]);
                 $this->assignPermissions($role, $name);
             }
@@ -78,7 +78,7 @@ class RolesAndPermissionsSeeder extends Seeder
         foreach ($this->permissions as $permission) {
             $dbPermission = Permission::where(['name' => $permission])->first();
 
-            if (!$dbPermission) {
+            if (! $dbPermission) {
                 Permission::create(['name' => $permission]);
             }
         }
