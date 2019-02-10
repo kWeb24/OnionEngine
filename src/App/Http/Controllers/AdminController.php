@@ -3,7 +3,6 @@
 namespace Kweber\OnionEngine\App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
@@ -13,7 +12,8 @@ class AdminController extends Controller
      *
      * @return void
      */
-    public function __construct() {
+    public function __construct()
+    {
         // $this->middleware(['role:super-admin']);
         $this->middleware(['auth']);
     }
@@ -23,7 +23,8 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() {
+    public function index()
+    {
         return view('OnionEngineAdmin::index');
     }
 }

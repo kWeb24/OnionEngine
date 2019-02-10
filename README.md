@@ -1,5 +1,8 @@
 # OnionEngine
 
+[![CircleCI](https://circleci.com/gh/kWeb24/OnionEngine.svg?style=svg)](https://circleci.com/gh/kWeb24/OnionEngine)
+[![StyleCI](https://github.styleci.io/repos/169605643/shield?branch=develop)](https://github.styleci.io/repos/169605643)
+
 ## This is WIP Readme
 
 ## Installation
@@ -77,3 +80,13 @@ Add local repository
     }
 ]
 ```
+
+### Testing
+Laravel installation require testbench
+`composer require --dev "orchestra/testbench=~3.0"`
+
+Run tests in package directory
+`composer test`
+
+On Windows:
+`composer test-win`

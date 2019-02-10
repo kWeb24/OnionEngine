@@ -24,7 +24,8 @@
     "spatie/laravel-permission": "^2.12"
   },
   "require-dev": {
-    "phpunit/phpunit": "^7.0"
+    "phpunit/phpunit": "^7.0",
+    "orchestra/testbench": "~3.0"
   },
   "autoload": {
     "psr-4": {
@@ -40,5 +41,9 @@
         "OnionEngine": "Kweber\\OnionEngine\\App\\Facades\\OnionEngine"
       }
     }
+  },
+  "scripts": {
+    "test": "../../../vendor/bin/phpunit --testdox",
+    "test-win": "bash ../../../vendor/bin/phpunit --testdox"
   }
 }
