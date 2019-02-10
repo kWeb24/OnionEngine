@@ -4,7 +4,6 @@ use Orchestra\Testbench\TestCase;
 
 final class OnionEngineFacadeTest extends TestCase
 {
-
     /**
      * Setup aliases.
      */
