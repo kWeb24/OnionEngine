@@ -10,7 +10,7 @@ We accept contributions via Pull Requests on [Github](https://github.com/kWeb24/
 
 - **[PSR-4 autoloading standard](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md)**
 
-- **[Laravel Contribution Guide](https://laravel.com/docs/5.7/contributions)
+- **[Laravel Contribution Guide](https://laravel.com/docs/5.7/contributions)**
 
 - **Add tests!** - Your patch won't be accepted if it doesn't have tests.
 
