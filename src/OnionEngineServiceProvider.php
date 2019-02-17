@@ -1,5 +1,12 @@
 <?php
-
+/**
+ * OnionEngine
+ *
+ * @author   Kamil Weber <kamilweber24@gmail.com>
+ * @license  http://opensource.org/licenses/MIT
+ * @package  onionengine
+ */
+ 
 namespace Kweber\OnionEngine;
 
 use Illuminate\Support\ServiceProvider;
@@ -95,7 +102,7 @@ class OnionEngineServiceProvider extends ServiceProvider
      */
     private function loadMigrations()
     {
-        // No migrations so far
+        $this->loadMigrationsFrom(__DIR__.'/database/migrations');
     }
 
     /**
