@@ -30,6 +30,12 @@ class SettingManager
         $this->settings = new SettingRepository($settings);
     }
 
+
+    /**
+     * Get and cache setting.
+     *
+     * @return string
+     */
     public function get($key)
     {
         return Cache::rememberForever($key, function () use ($key) {
@@ -39,6 +45,11 @@ class SettingManager
         });
     }
 
+    /**
+     * Set and cache setting.
+     *
+     * @return string
+     */
     public function set($key, $value)
     {
         Cache::forget($key);

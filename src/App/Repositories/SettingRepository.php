@@ -25,6 +25,8 @@ class SettingRepository implements ISettings
     }
 
     /**
+     * Get setting from database.
+     *
      * @param  string  $key
      * @return mixed
      */
@@ -34,6 +36,8 @@ class SettingRepository implements ISettings
     }
 
     /**
+     * Save setting in database.
+     *
      * @param  string  $key
      * @param  string  $key
      */
@@ -54,6 +58,8 @@ class SettingRepository implements ISettings
     }
 
     /**
+     * Check if setting exist in database.
+     *
      * @param  string  $key
      * @return bool
      */
@@ -65,6 +71,8 @@ class SettingRepository implements ISettings
     }
 
     /**
+     * Remove setting from database.
+     *
      * @param  string  $key
      * @return void
      */
@@ -75,6 +83,8 @@ class SettingRepository implements ISettings
     }
 
     /**
+     * Remove all settings from database.
+     *
      * @return void
      */
     public function forgetAll()
@@ -83,6 +93,8 @@ class SettingRepository implements ISettings
     }
 
     /**
+     * Get all settings from database.
+     *
      * @return array
      */
     public function getAll()
