@@ -61,7 +61,7 @@ class SettingRepository implements ISettings
     {
         $setting = $this->get($key);
 
-        return ($setting);
+        return $setting ? true : false;
     }
 
     /**

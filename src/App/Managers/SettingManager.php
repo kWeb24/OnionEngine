@@ -34,6 +34,7 @@ class SettingManager
     {
         return Cache::rememberForever($key, function () use ($key) {
             $setting = $this->settings->get($key);
+
             return ($setting) ? $setting->value : null;
         });
     }
@@ -41,8 +42,10 @@ class SettingManager
     public function set($key, $value)
     {
         Cache::forget($key);
+
         return Cache::rememberForever($key, function () use ($key, $value) {
             $setting = $this->settings->set($key, $value);
+
             return ($setting) ? $setting->value : null;
         });
     }

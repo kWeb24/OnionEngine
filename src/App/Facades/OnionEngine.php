@@ -118,7 +118,7 @@ class OnionEngine extends Facade
     public static function setting($key)
     {
         $settings = \App::make('SettingManager');
-        
+
         return $settings->get($key);
     }
 
