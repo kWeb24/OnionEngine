@@ -30,7 +30,6 @@ class SettingManager
         $this->settings = new SettingRepository($settings);
     }
 
-
     /**
      * Get and cache setting.
      *

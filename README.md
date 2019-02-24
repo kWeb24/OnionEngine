@@ -95,9 +95,11 @@ Get all global site related settings in array:
 
 Return setting string or array of settings (Title, Desc, Lang)
 
-`OnionEngine::siteTitle() or OnionEngine::site('title')` - get site title
-`OnionEngine::siteDescription() or OnionEngine::site('desc')` - get site description
-`OnionEngine::siteLanguage() or OnionEngine::site('lang')` - get site language
+`OnionEngine::siteTitle()` or `OnionEngine::site('title')` - get site title
+
+`OnionEngine::siteDescription()` or `OnionEngine::site('desc')` - get site description
+
+`OnionEngine::siteLanguage()` or `OnionEngine::site('lang')` - get site language
 
 ## Dev
 
