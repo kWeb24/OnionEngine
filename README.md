@@ -84,6 +84,21 @@ using this credintials:
 
 `Password: admin`
 
+### Using settings
+You can get application settings through `OnionEngine` facade:
+
+`OnionEngine::setting({setting_name})`
+
+Get all global site related settings in array:
+
+`OnionEngine::site(optional {setting_name})`
+
+Return setting string or array of settings (Title, Desc, Lang)
+
+`OnionEngine::siteTitle() or OnionEngine::site('title')` - get site title
+`OnionEngine::siteDescription() or OnionEngine::site('desc')` - get site description
+`OnionEngine::siteLanguage() or OnionEngine::site('lang')` - get site language
+
 ## Dev
 
 ### Add to composer.json

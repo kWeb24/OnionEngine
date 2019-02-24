@@ -1,16 +1,18 @@
 <?php
 /**
- * OnionEngine
+ * OnionEngine.
  *
  * @author   Kamil Weber <kamilweber24@gmail.com>
  * @license  http://opensource.org/licenses/MIT
  * @package  onionengine
  */
- 
+
 namespace Kweber\OnionEngine;
 
 use Illuminate\Support\ServiceProvider;
 use Kweber\OnionEngine\App\Console\Commands\Installer\Installer;
+use Kweber\OnionEngine\App\Managers\SettingManager;
+use Kweber\OnionEngine\App\Http\Models\Setting;
 
 class OnionEngineServiceProvider extends ServiceProvider
 {
@@ -45,6 +47,10 @@ class OnionEngineServiceProvider extends ServiceProvider
             __DIR__.'/../config/onion_engine.php',
             'onion_engine'
         );
+
+        $this->app->singleton('SettingManager', function () {
+            return new SettingManager(new Setting);
+        });
     }
 
     /**

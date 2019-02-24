@@ -11,20 +11,22 @@
       <div class="bgc-white p-20 bd">
         <h6 class="c-grey-900"><strong>Site settings</strong></h6>
         <div class="mT-15">
-          <form>
+          <form action="{{route('admin.settings.general.save')}}" method="post">
+            @csrf
+
             <div class="form-group">
               <label for="siteTitle">Site title</label>
-              <input id="siteTitle" name="site-title" type="text" class="form-control" value="{{ config('app.name', 'Site title') }}" placeholder="Site title">
+              <input id="siteTitle" name="site-title" type="text" class="form-control" value="{{ OnionEngine::siteTitle() }}" placeholder="Site title">
             </div>
             <div class="form-group">
               <label for="siteDesc">Side description</label>
-              <input id="siteDesc" type="text" class="form-control" placeholder="Site description" aria-describedby="siteDescHelp">
+              <input id="siteDesc" name="site-desc" type="text" class="form-control" value="{{ OnionEngine::siteDescription() }}" placeholder="Site description" aria-describedby="siteDescHelp">
               <small id="siteDescHelp" class="form-text text-muted">A few words about your site</small>
             </div>
             <div class="form-group">
               <label for="siteLanguage">Default site language</label>
-              <select id="siteLanguage" class="form-control" name="site-language">
-                <option selected>English (US)</option>
+              <select id="siteLanguage" class="form-control" name="site-lang">
+                <option value="en_US" {{ (OnionEngine::siteLanguage() == 'en_US') ? 'selected' : '' }}>English (US)</option>
               </select>
             </div>
             <button type="submit" class="btn btn-primary">Save</button>

@@ -1,12 +1,12 @@
 <?php
 /**
- * OnionEngine
+ * OnionEngine.
  *
  * @author   Kamil Weber <kamilweber24@gmail.com>
  * @license  http://opensource.org/licenses/MIT
  * @package  onionengine
  */
- 
+
 namespace Kweber\OnionEngine\App\Http\Requests\Settings;
 
 use Illuminate\Foundation\Http\FormRequest;
@@ -20,7 +20,7 @@ class GeneralSiteSettings extends FormRequest
      */
     public function authorize()
     {
-        return Auth::user()->hasRole('super-admin');
+        return \Auth::user()->hasRole('super-admin');
     }
 
     /**
@@ -30,10 +30,10 @@ class GeneralSiteSettings extends FormRequest
      */
     public function rules()
     {
-      return [
-          'title' => 'nullable',
-          'desc' => 'nullable',
-          'lang' => 'nullable',
-      ];
+        return [
+            'site-title' => 'nullable',
+            'site-desc' => 'nullable',
+            'site-lang' => 'nullable',
+        ];
     }
 }

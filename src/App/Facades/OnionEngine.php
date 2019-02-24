@@ -1,4 +1,11 @@
 <?php
+/**
+ * OnionEngine.
+ *
+ * @author   Kamil Weber <kamilweber24@gmail.com>
+ * @license  http://opensource.org/licenses/MIT
+ * @package  onionengine
+ */
 
 namespace Kweber\OnionEngine\App\Facades;
 
@@ -101,5 +108,68 @@ class OnionEngine extends Facade
     public static function assetsPath()
     {
         return asset(config('onion_engine.options.public_assets_path')).'/';
+    }
+
+    /**
+     * Get OnionEngine setting.
+     *
+     * @return array
+     */
+    public static function setting($key)
+    {
+        $settings = \App::make('SettingManager');
+        return $settings->get($key);
+    }
+
+    /**
+     * Get site settings.
+     *
+     * @return string
+     */
+    public static function site($settingType = null)
+    {
+        switch($settingType) {
+          case 'title': return OnionEngine::siteTitle(); break;
+          case 'desc': return OnionEngine::siteDescription(); break;
+          case 'lang': return OnionEngine::siteLanguage(); break;
+          default: {
+            return [
+              'title' => OnionEngine::siteTitle(),
+              'desc' => OnionEngine::siteDescription(),
+              'lang' => OnionEngine::siteLanguage(),
+            ];
+            break;
+          }
+        }
+    }
+
+    /**
+     * Get site title.
+     *
+     * @return string
+     */
+    public static function siteTitle()
+    {
+        return (OnionEngine::setting('site_title')) ? OnionEngine::setting('site_title') : config('app.name', 'Site title');
+    }
+
+    /**
+     * Get site description.
+     *
+     * @return string
+     */
+    public static function siteDescription()
+    {
+        return OnionEngine::setting('site_description');
+    }
+
+    /**
+     * Get site language.
+     *
+     * @return string
+     */
+    public static function siteLanguage()
+    {
+        return OnionEngine::setting('site_language');
     }
 }
