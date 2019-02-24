@@ -10,9 +10,9 @@
 namespace Kweber\OnionEngine;
 
 use Illuminate\Support\ServiceProvider;
-use Kweber\OnionEngine\App\Console\Commands\Installer\Installer;
-use Kweber\OnionEngine\App\Managers\SettingManager;
 use Kweber\OnionEngine\App\Http\Models\Setting;
+use Kweber\OnionEngine\App\Managers\SettingManager;
+use Kweber\OnionEngine\App\Console\Commands\Installer\Installer;
 
 class OnionEngineServiceProvider extends ServiceProvider
 {

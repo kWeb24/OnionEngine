@@ -9,7 +9,8 @@
 
 namespace Kweber\OnionEngine\App\Interfaces;
 
-interface ISettings {
+interface ISettings
+{
     public function get($key);
 
     public function set($key, $value);

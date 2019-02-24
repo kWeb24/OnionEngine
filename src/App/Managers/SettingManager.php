@@ -9,36 +9,38 @@
 
 namespace KWeber\OnionEngine\App\Managers;
 
-use Kweber\OnionEngine\App\Repositories\SettingRepository;
 use Illuminate\Support\Facades\Cache;
 use Kweber\OnionEngine\App\Http\Models\Setting;
+use Kweber\OnionEngine\App\Repositories\SettingRepository;
 
 class SettingManager
 {
     /**
-      * Settings repository.
-      *
-      */
+     * Settings repository.
+     *
+     */
     protected $settings;
 
     /**
-      * Create a new controller instance.
-      *
-      * @return void
-      */
+     * Create a new controller instance.
+     *
+     * @return void
+     */
     public function __construct(Setting $settings)
     {
         $this->settings = new SettingRepository($settings);
     }
 
-    public function get($key) {
+    public function get($key)
+    {
         return Cache::rememberForever($key, function () use ($key) {
             $setting = $this->settings->get($key);
             return ($setting) ? $setting->value : null;
         });
     }
 
-    public function set($key, $value) {
+    public function set($key, $value)
+    {
         Cache::forget($key);
         return Cache::rememberForever($key, function () use ($key, $value) {
             $setting = $this->settings->set($key, $value);

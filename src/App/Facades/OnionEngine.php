@@ -128,7 +128,7 @@ class OnionEngine extends Facade
      */
     public static function site($settingType = null)
     {
-        switch($settingType) {
+        switch ($settingType) {
           case 'title': return OnionEngine::siteTitle(); break;
           case 'desc': return OnionEngine::siteDescription(); break;
           case 'lang': return OnionEngine::siteLanguage(); break;

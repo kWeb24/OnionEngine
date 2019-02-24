@@ -25,7 +25,6 @@ class SettingRepository implements ISettings
     }
 
     /**
-     *
      * @param  string  $key
      * @return mixed
      */
@@ -35,7 +34,6 @@ class SettingRepository implements ISettings
     }
 
     /**
-     *
      * @param  string  $key
      * @param  string  $key
      */
@@ -56,7 +54,6 @@ class SettingRepository implements ISettings
     }
 
     /**
-     *
      * @param  string  $key
      * @return boolean
      */
@@ -67,7 +64,6 @@ class SettingRepository implements ISettings
     }
 
     /**
-     *
      * @param  string  $key
      * @return void
      */
@@ -78,7 +74,6 @@ class SettingRepository implements ISettings
     }
 
     /**
-     *
      * @return void
      */
     public function forgetAll()
@@ -87,7 +82,6 @@ class SettingRepository implements ISettings
     }
 
     /**
-     *
      * @return array
      */
     public function getAll()
