@@ -55,11 +55,12 @@ class SettingRepository implements ISettings
 
     /**
      * @param  string  $key
-     * @return boolean
+     * @return bool
      */
     public function has($key)
     {
         $setting = $this->get($key);
+
         return ($setting);
     }
 

@@ -17,7 +17,6 @@ class SettingManager
 {
     /**
      * Settings repository.
-     *
      */
     protected $settings;
 

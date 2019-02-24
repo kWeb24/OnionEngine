@@ -43,15 +43,15 @@ class SettingController extends Controller
         $validated = $request->validated();
 
         if (! empty($validated['site-title'])) {
-          $this->settings->set('site_title', $validated['site-title']);
+            $this->settings->set('site_title', $validated['site-title']);
         }
 
         if (! empty($validated['site-desc'])) {
-          $this->settings->set('site_description', $validated['site-desc']);
+            $this->settings->set('site_description', $validated['site-desc']);
         }
 
         if (! empty($validated['site-lang'])) {
-          $this->settings->set('site_language', $validated['site-lang']);
+            $this->settings->set('site_language', $validated['site-lang']);
         }
 
         return redirect()->back()->with('success', ['Settings saved!']);
