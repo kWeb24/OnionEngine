@@ -2,7 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/kWeb24/OnionEngine.svg?style=svg)](https://circleci.com/gh/kWeb24/OnionEngine)
 [![StyleCI](https://github.styleci.io/repos/169605643/shield?branch=develop)](https://github.styleci.io/repos/169605643)
-[![LicenseMIT](https://img.shields.io/github/license/kWeb24/OnionEngine.svg?style=flat)]
+![LicenseMIT](https://img.shields.io/github/license/kWeb24/OnionEngine.svg?style=flat)
 ## This is WIP Readme
 
 ## Installation
