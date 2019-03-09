@@ -61,7 +61,7 @@ class SettingManager
     }
 
     /**
-     * Flush settings cache
+     * Flush settings cache.
      *
      * @return string
      */

@@ -92,6 +92,7 @@ class SettingController extends Controller
     public function cacheClear()
     {
         $this->settings->flush();
+        
         return redirect()->back()->with('success', ['Settings cache cleared!']);
     }
 
@@ -103,6 +104,7 @@ class SettingController extends Controller
     public function cacheClearView()
     {
         \Artisan::call('view:clear');
+
         return redirect()->back()->with('success', ['Views cache cleared!']);
     }
 
@@ -114,6 +116,7 @@ class SettingController extends Controller
     public function cacheClearRoute()
     {
         \Artisan::call('route:cache');
+
         return redirect()->back()->with('success', ['Routes cache cleared!']);
     }
 
@@ -125,6 +128,7 @@ class SettingController extends Controller
     public function cacheClearConfig()
     {
         \Artisan::call('config:cache');
+
         return redirect()->back()->with('success', ['Config cache cleared!']);
     }
 
@@ -136,17 +140,19 @@ class SettingController extends Controller
     public function cacheClearAll()
     {
         \Artisan::call('cache:clear');
+
         return redirect()->back()->with('success', ['Cache cleared!']);
     }
 
     /**
-     * Optimize class loader
+     * Optimize class loader.
      *
      * @return \Illuminate\Http\Response
      */
     public function optimizeClassLoader()
     {
         \Artisan::call('optimize');
+
         return redirect()->back()->with('success', ['Cache cleared!']);
     }
 
