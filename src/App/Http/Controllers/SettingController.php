@@ -92,7 +92,7 @@ class SettingController extends Controller
     public function cacheClear()
     {
         $this->settings->flush();
-        
+
         return redirect()->back()->with('success', ['Settings cache cleared!']);
     }
 
