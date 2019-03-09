@@ -89,7 +89,8 @@ class SettingController extends Controller
      *
      * @return void
      */
-    private function saveSettings($fields, $request) {
+    private function saveSettings($fields, $request)
+    {
         $validated = $request->validated();
 
         foreach ($fields as $key => $field) {

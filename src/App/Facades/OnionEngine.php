@@ -173,4 +173,14 @@ class OnionEngine extends Facade
     {
         return OnionEngine::setting('site_language');
     }
+
+    /**
+     * Get all roles.
+     *
+     * @return string
+     */
+    public static function roles()
+    {
+        return \Spatie\Permission\Models\Role::all();
+    }
 }

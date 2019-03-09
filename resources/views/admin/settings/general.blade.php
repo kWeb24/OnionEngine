@@ -60,8 +60,9 @@
             <div class="form-group">
               <label for="defaultUserRole">Default user role</label>
               <select id="defaultUserRole" class="form-control" name="default-user-role">
-                <option>User</option>
-                <option>Editor</option>
+                @foreach (OnionEngine::roles() as $role)
+                  <option value="{{ $role->id }}" {{ (OnionEngine::setting('user_default_role') == $role->id) ? 'selected' : '' }}>{{ $role->name }}</option>
+                @endforeach
               </select>
             </div>
             <button type="submit" class="btn btn-primary">Save</button>
