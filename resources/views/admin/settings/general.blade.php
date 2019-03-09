@@ -39,10 +39,11 @@
       <div class="bgc-white p-20 bd">
         <h6 class="c-grey-900"><strong>Users settings</strong></h6>
         <div class="mT-15">
-          <form>
+          <form action="{{route('admin.settings.general.user.save')}}" method="post">
+            @csrf
             <div class="form-group">
               <div class="checkbox checkbox-info peers ai-c mB-15">
-                <input type="checkbox" id="canUserRegister" name="can-user-register" class="peer">
+                <input type="checkbox" id="canUserRegister" name="can-user-register" class="peer" value="1" {{ (OnionEngine::setting('user_allow_registration') == true) ? 'checked' : '' }}>
                 <label for="canUserRegister" class=" peers peer-greed js-sb ai-c">
                   <span class="peer peer-greed">Anyone can register</span>
                 </label>
@@ -50,7 +51,7 @@
             </div>
             <div class="form-group">
               <div class="checkbox checkbox-info peers ai-c mB-15">
-                <input type="checkbox" id="shouldVerifyEmailAddress" name="should-verify-email-address" class="peer">
+                <input type="checkbox" id="shouldVerifyEmailAddress" name="should-verify-email-address" class="peer" value="1" {{ (OnionEngine::setting('user_verify_email') == true) ? 'checked' : '' }}>
                 <label for="shouldVerifyEmailAddress" class=" peers peer-greed js-sb ai-c">
                   <span class="peer peer-greed">Require e-mail verification</span>
                 </label>
@@ -59,7 +60,7 @@
             <div class="form-group">
               <label for="defaultUserRole">Default user role</label>
               <select id="defaultUserRole" class="form-control" name="default-user-role">
-                <option selected>User</option>
+                <option>User</option>
                 <option>Editor</option>
               </select>
             </div>

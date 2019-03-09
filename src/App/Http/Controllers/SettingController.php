@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Auth;
 use Kweber\OnionEngine\App\Http\Models\Setting;
 use Kweber\OnionEngine\App\Managers\SettingManager;
 use Kweber\OnionEngine\App\Http\Requests\Settings\GeneralSiteSettings;
+use Kweber\OnionEngine\App\Http\Requests\Settings\GeneralUserSettings;
 
 class SettingController extends Controller
 {
@@ -40,20 +41,61 @@ class SettingController extends Controller
      */
     public function saveGeneral(GeneralSiteSettings $request)
     {
-        $validated = $request->validated();
+        $fields = [
+          'site-title' => [
+            'name' => 'site_title',
+          ],
+          'site-desc' => [
+            'name' => 'site_description',
+          ],
+          'site-lang' => [
+            'name' => 'site_language',
+          ],
+        ];
 
-        if (! empty($validated['site-title'])) {
-            $this->settings->set('site_title', $validated['site-title']);
-        }
-
-        if (! empty($validated['site-desc'])) {
-            $this->settings->set('site_description', $validated['site-desc']);
-        }
-
-        if (! empty($validated['site-lang'])) {
-            $this->settings->set('site_language', $validated['site-lang']);
-        }
+        $this->saveSettings($fields, $request);
 
         return redirect()->back()->with('success', ['Settings saved!']);
+    }
+
+    /**
+     * Save general user settings.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function saveUserGeneral(GeneralUserSettings $request)
+    {
+        $fields = [
+          'can-user-register' => [
+            'name' => 'user_allow_registration',
+            'toggle' => true,
+          ],
+          'should-verify-email-address' => [
+            'name' => 'user_verify_email',
+            'toggle' => true,
+          ],
+          'default-user-role' => [
+            'name' => 'user_default_role',
+          ],
+        ];
+
+        $this->saveSettings($fields, $request);
+
+        return redirect()->back()->with('success', ['Settings saved!']);
+    }
+
+    /**
+     * Save fields to database.
+     *
+     * @return void
+     */
+    private function saveSettings($fields, $request) {
+        $validated = $request->validated();
+
+        foreach ($fields as $key => $field) {
+            if (! empty($validated[$key]) || $field['toggle']) {
+                $this->settings->set($field['name'], (! empty($validated[$key])) ? $validated[$key] : 0);
+            }
+        }
     }
 }
