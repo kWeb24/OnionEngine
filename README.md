@@ -2,7 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/kWeb24/OnionEngine.svg?style=svg)](https://circleci.com/gh/kWeb24/OnionEngine)
 [![StyleCI](https://github.styleci.io/repos/169605643/shield?branch=develop)](https://github.styleci.io/repos/169605643)
-
+![LicenseMIT](https://img.shields.io/github/license/kWeb24/OnionEngine.svg?style=flat)
 ## This is WIP Readme
 
 ## Installation
@@ -84,7 +84,26 @@ using this credintials:
 
 `Password: admin`
 
+### Using settings
+You can get application settings through `OnionEngine` facade:
+
+`OnionEngine::setting({setting_name})`
+
+Get all global site related settings in array:
+
+`OnionEngine::site(optional {setting_name})`
+
+Return setting string or array of settings (Title, Desc, Lang)
+
+`OnionEngine::siteTitle()` or `OnionEngine::site('title')` - get site title
+
+`OnionEngine::siteDescription()` or `OnionEngine::site('desc')` - get site description
+
+`OnionEngine::siteLanguage()` or `OnionEngine::site('lang')` - get site language
+
 ## Dev
+
+Settings cache should be tagged.
 
 ### Add to composer.json
 

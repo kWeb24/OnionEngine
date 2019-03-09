@@ -1,2 +1,4 @@
 preset: laravel
 risky: false
+disabled:
+  - phpdoc_no_package
