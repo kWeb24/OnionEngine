@@ -85,6 +85,72 @@ class SettingController extends Controller
     }
 
     /**
+     * Clear settings cache.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function cacheClear()
+    {
+        $this->settings->flush();
+        return redirect()->back()->with('success', ['Settings cache cleared!']);
+    }
+
+    /**
+     * Clear views cache.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function cacheClearView()
+    {
+        \Artisan::call('view:clear');
+        return redirect()->back()->with('success', ['Views cache cleared!']);
+    }
+
+    /**
+     * Clear routes cache.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function cacheClearRoute()
+    {
+        \Artisan::call('route:cache');
+        return redirect()->back()->with('success', ['Routes cache cleared!']);
+    }
+
+    /**
+     * Clear config cache.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function cacheClearConfig()
+    {
+        \Artisan::call('config:cache');
+        return redirect()->back()->with('success', ['Config cache cleared!']);
+    }
+
+    /**
+     * Clear all cache.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function cacheClearAll()
+    {
+        \Artisan::call('cache:clear');
+        return redirect()->back()->with('success', ['Cache cleared!']);
+    }
+
+    /**
+     * Optimize class loader
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function optimizeClassLoader()
+    {
+        \Artisan::call('optimize');
+        return redirect()->back()->with('success', ['Cache cleared!']);
+    }
+
+    /**
      * Save fields to database.
      *
      * @return void

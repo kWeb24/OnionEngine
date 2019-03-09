@@ -103,6 +103,8 @@ Return setting string or array of settings (Title, Desc, Lang)
 
 ## Dev
 
+Settings cache should be tagged.
+
 ### Add to composer.json
 
 Add local repository

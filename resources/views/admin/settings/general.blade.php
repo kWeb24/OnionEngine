@@ -78,21 +78,22 @@
             <h6 class="c-grey-900"><strong>Caching</strong></h6>
             <div class="mT-15">
               <p class="c-grey-700">
-                By default cache will be removed only for settings. Use arrow to select wich cache should be removed.
+                By default cache will be removed only for settings. Use arrow to select wich particular cache should be removed.
               </p>
-              <form>
+              <form action="{{route('admin.settings.cache.clear')}}" method="get">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-danger">Clear cache</button>
+                  <button type="submit" class="btn btn-danger">Clear cache</button>
                   <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="sr-only">Toggle Dropdown</span>
                   </button>
                   <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Clear settings cache</a>
-                    <a class="dropdown-item" href="#">Clear views cache</a>
-                    <a class="dropdown-item" href="#">Clear route cache</a>
+                    <a class="dropdown-item" href="{{route('admin.settings.cache.view.clear')}}">Clear views cache</a>
+                    <a class="dropdown-item" href="{{route('admin.settings.cache.route.clear')}}">Clear route cache</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Clear all</a>
-                    <a class="dropdown-item" href="#">Clear sessions</a>
+                    <a class="dropdown-item" href="{{route('admin.settings.cache.all.clear')}}">Clear all</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="{{route('admin.settings.cache.config.clear')}}">Clear config</a>
+                    <a class="dropdown-item" href="{{route('admin.settings.cache.classloader.optimize')}}">Optimize class loader</a>
                   </div>
                 </div>
               </form>

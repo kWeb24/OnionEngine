@@ -59,4 +59,14 @@ class SettingManager
             return ($setting) ? $setting->value : null;
         });
     }
+
+    /**
+     * Flush settings cache
+     *
+     * @return string
+     */
+    public function flush()
+    {
+        Cache::flush();
+    }
 }
