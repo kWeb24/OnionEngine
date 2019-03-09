@@ -22,7 +22,7 @@ class OnionEngine extends Facade
      * Labels: -dev (-d) -patch (-p) -alpha (-a) -beta (-b) -relase-candidate (-rc) -relase (-r)
      * https://semver.org/.
      */
-    public static $version = '0.1.1-d';
+    public static $version = '0.1.2-d';
 
     /**
      * Current version stability.
