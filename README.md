@@ -101,6 +101,15 @@ Return setting string or array of settings (Title, Desc, Lang)
 
 `OnionEngine::siteLanguage()` or `OnionEngine::site('lang')` - get site language
 
+## Themes
+
+Add to package.json:
+```javascript
+"onionEngineTemplate": {
+  "name": "TemplateName"
+}
+```
+
 ## Dev
 
 Settings cache should be tagged.
