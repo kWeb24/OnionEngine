@@ -119,6 +119,7 @@ Add local repository
 Build js/scss sources:
 
 `npm run watch` - for dev
+
 `npm run prod` - for production build
 
 ### Testing
