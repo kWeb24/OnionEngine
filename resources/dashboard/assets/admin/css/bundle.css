@@ -1,0 +1,29 @@
+.pageEditor__textarea {
+  width: 100%;
+}
+
+.pageEditor .sun-editor {
+  /*
+     * Overrides default editor icon font-size
+     */
+  /*
+     * Overrides default editor button size
+     */
+}
+
+.pageEditor .sun-editor [class*="icon-"]:before {
+  font-size: 10px;
+}
+
+.pageEditor .sun-editor .btn_editor {
+  width: 25px;
+  height: 25px;
+}
+
+.pageEditor .sun-editor .btn_editor.btn_size {
+  width: 70px;
+}
+
+.pageEditor .sun-editor .btn_editor.btn_format {
+  width: 90px;
+}

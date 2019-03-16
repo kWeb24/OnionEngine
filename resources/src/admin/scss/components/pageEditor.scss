@@ -1,0 +1,41 @@
+$editor: '.sun-editor';
+$icon: '[class*="icon-"]';
+$button: '.btn_editor';
+$sizeButton: '.btn_size';
+$formatButton: '.btn_format';
+
+.pageEditor {
+
+  &__textarea {
+    width: 100%;
+  }
+
+  #{$editor} {
+
+    /*
+     * Overrides default editor icon font-size
+     */
+    #{$icon} {
+
+      &:before {
+        font-size: 10px;
+      }
+    }
+
+    /*
+     * Overrides default editor button size
+     */
+    #{$button} {
+      width: 25px;
+      height: 25px;
+
+      &#{$sizeButton} {
+        width: 70px;
+      }
+
+      &#{$formatButton} {
+        width: 90px;
+      }
+    }
+  }
+}

@@ -20,4 +20,15 @@
     font-weight: normal;
     font-style: normal;
   }
+
+  @font-face {
+    font-family: 'Suneditor-icon';
+    src:url("{{ \OnionEngine::dashboardAssetsPath() }}static/fonts/icons/suneditor/Suneditor-icon.eot");
+    src:url("{{ \OnionEngine::dashboardAssetsPath() }}static/fonts/icons/suneditor/Suneditor-icon.eot?#iefix") format('embedded-opentype'),
+    url("{{ \OnionEngine::dashboardAssetsPath() }}static/fonts/icons/suneditor/Suneditor-icon.woff") format('woff'),
+    url("{{ \OnionEngine::dashboardAssetsPath() }}static/fonts/icons/suneditor/Suneditor-icon.ttf") format('truetype'),
+    url("{{ \OnionEngine::dashboardAssetsPath() }}static/fonts/icons/suneditor/Suneditor-icon.svg") format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
 </style>

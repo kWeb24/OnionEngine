@@ -22,4 +22,6 @@ Route::group(['middleware' => ['web', 'auth', 'role:super-admin']], function () 
     Route::get('/admin/settings/cache/all/clear', '\Kweber\OnionEngine\App\Http\Controllers\SettingController@cacheClearAll')->name('admin.settings.cache.all.clear');
     Route::get('/admin/settings/cache/config/clear', '\Kweber\OnionEngine\App\Http\Controllers\SettingController@cacheClearConfig')->name('admin.settings.cache.config.clear');
     Route::get('/admin/settings/cache/classloader/optimize', '\Kweber\OnionEngine\App\Http\Controllers\SettingController@optimizeClassLoader')->name('admin.settings.cache.classloader.optimize');
+
+    Route::get('/admin/pages/add', '\Kweber\OnionEngine\App\Http\Controllers\PageController@addPage')->name('admin.pages.add');
 });

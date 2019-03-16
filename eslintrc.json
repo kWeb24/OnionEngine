@@ -1,0 +1,33 @@
+{
+  "extends": "eslint-config-airbnb-base",
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "jquery": true,
+    "node": true
+  },
+  "globals": {},
+  "rules": {
+    "arrow-parens": [2, "as-needed", { "requireForBlockBody": true }],
+    "camelcase": ["error", { "properties": "always" }],
+    "comma-dangle": ["error", "always-multiline"],
+    "consistent-return": "off",
+    "curly": ["error", "multi-line"],
+    "indent": ["error", 2, { "ignoreComments": true }],
+    "key-spacing": "off",
+    "linebreak-style": ["error", "unix"],
+    "max-len": ["error", { "code": 100, "tabWidth": 2, "ignoreComments": true }],
+    "no-console": "off",
+    "no-magic-numbers": ["error", { "ignore": [0,1,2] }],
+    "no-multi-spaces": ["error", { "exceptions": {"AssignmentExpression": true, "Property": true, "VariableDeclarator": true } }],
+    "no-new": "off",
+    "no-param-reassign": ["error", { "props": false }],
+    "no-plusplus": "off",
+    "no-unused-expressions": "off",
+    "no-unused-vars": ["error", { "varsIgnorePattern": "^[A-Z][a-zA-Z]{3,}$" }],
+    "padded-blocks": "off",
+    "quote-props": ["error", "as-needed"],
+    "radix": ["error", "as-needed"]
+  }
+}
