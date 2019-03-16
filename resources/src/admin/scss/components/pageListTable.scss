@@ -1,0 +1,60 @@
+$sorting: '.sorting';
+$sortingAsc: '.sorting_asc';
+$sortingDesc: '.sorting_desc';
+$paginationButton: '.paginate_button';
+
+.pageListTable {
+  width: 100%;
+
+  /*
+   * Add sorting hovers, indicators and animations
+   */
+  thead th,
+  tfoot th {
+    cursor: pointer;
+    transition: .4s ease;
+
+    i {
+      position: relative;
+      font-size: 10px;
+      margin-left: 5px;
+
+      &:before {
+        transition: .2s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+
+    &#{$sortingAsc} {
+
+      i {
+
+        &:before {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    &#{$sortingAsc},
+    &#{$sortingDesc} {
+      color: #0f9aee;
+    }
+  }
+
+  /*
+   * Add cursor pointer to pagination items
+   */
+  #{$paginationButton} {
+    cursor: pointer;
+  }
+
+  &__status {
+    width: 100px;
+  }
+
+  &__modified {
+    width: 150px;
+  }
+}

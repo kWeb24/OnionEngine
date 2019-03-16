@@ -21,7 +21,7 @@
       </a>
       <ul class="dropdown-menu">
         <li>
-          <a class='sidebar-link' href="{{route('admin.settings')}}">All pages</a>
+          <a class='sidebar-link' href="{{route('admin.pages.list')}}">All pages</a>
         </li>
         <li>
           <a class='sidebar-link' href="{{route('admin.pages.add')}}">Add new</a>

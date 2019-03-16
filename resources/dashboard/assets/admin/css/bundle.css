@@ -27,3 +27,63 @@
 .pageEditor .sun-editor .btn_editor.btn_format {
   width: 90px;
 }
+
+.pageListTable {
+  width: 100%;
+  /*
+   * Add sorting hovers, indicators and animations
+   */
+  /*
+   * Add cursor pointer to pagination items
+   */
+}
+
+.pageListTable thead th,
+.pageListTable tfoot th {
+  cursor: pointer;
+  -webkit-transition: .4s ease;
+  -o-transition: .4s ease;
+  transition: .4s ease;
+}
+
+.pageListTable thead th i,
+.pageListTable tfoot th i {
+  position: relative;
+  font-size: 10px;
+  margin-left: 5px;
+}
+
+.pageListTable thead th i:before,
+.pageListTable tfoot th i:before {
+  -webkit-transition: .2s ease;
+  -o-transition: .2s ease;
+  transition: .2s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.pageListTable thead th.sorting_asc i:before,
+.pageListTable tfoot th.sorting_asc i:before {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.pageListTable thead th.sorting_asc, .pageListTable thead th.sorting_desc,
+.pageListTable tfoot th.sorting_asc,
+.pageListTable tfoot th.sorting_desc {
+  color: #0f9aee;
+}
+
+.pageListTable .paginate_button {
+  cursor: pointer;
+}
+
+.pageListTable__status {
+  width: 100px;
+}
+
+.pageListTable__modified {
+  width: 150px;
+}

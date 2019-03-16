@@ -26,4 +26,14 @@ class PageController extends Controller
     {
         return view('OnionEngineAdmin::pages.add');
     }
+
+    /**
+     * Show pages list view.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function pagesList()
+    {
+        return view('OnionEngineAdmin::pages.list');
+    }
 }
